@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces
 {
-    public interface IPessoaService
+    public interface IAmigoService
     {
-        IList<PessoaViewModel> ListaTodas();
-        IList<PessoaViewModel> ListaSelecionados(List<int> selecionados);
+        IList<AmigoViewModel> ListaTodas();
+        IList<AmigoViewModel> ListaSelecionados(List<int> selecionado);
 
     }
 }

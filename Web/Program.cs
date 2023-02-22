@@ -9,17 +9,21 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 //Camada de serviço
-builder.Services.AddScoped<IPessoaService, PessoaService>();
+builder.Services.AddScoped<IAmigoService, AmigoService>();
 
 //DbConenection
-builder.Services.AddDbContext<PessoaDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("PessoaDB")
+builder.Services.AddDbContext<AmigoDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("AmigosDB")
 ));
+
+//Backup sessions
+builder.Services.AddDistributedMemoryCache();
 
 //Setup Session
 builder.Services.AddSession();
 
-////Cache
-//builder.Services.AddMemoryCache();
+
+//Cache
+builder.Services.AddMemoryCache();
 
 var app = builder.Build();
 

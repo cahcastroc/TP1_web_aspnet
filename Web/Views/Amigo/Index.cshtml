@@ -1,11 +1,11 @@
-﻿@model List<Domain.ViewModel.PessoaViewModel>
+﻿@model List<Domain.ViewModel.AmigoViewModel>
 @{
 }
 
 <h2>Lista de Amigos</h2>
 <h2>Selecione os amigos desejados:</h2>
 
-@using (Html.BeginForm("selecionar", "pessoa", FormMethod.Post))
+@using (Html.BeginForm("detalhes", "amigo", FormMethod.Post))
 {
 
     <table class="table table-bordered">
@@ -23,18 +23,21 @@
 
             {
                 <tr>
-                    <td><input type="checkbox" name="Selecionado" value="@item.Id"/></td>
+                    <td><input type="checkbox" name="Selecionado" value="@item.Id" checked="@item.Selecionado"/></td>
                     <td>@item.Nome</td>
                     <td>@item.Sobrenome</td>
                     <td>@item.Email</td>
+                    <td>@item.Selecionado</td>
 
                 </tr>
 
             }
         </tbody>
     </table>
-    <button type="submit">
+    <div class="text-center">
+    <button type="submit" class="btn btn-outline-primary">
         Visualizar aniversário dos selecionados
     </button>
+    </div>
 
 }

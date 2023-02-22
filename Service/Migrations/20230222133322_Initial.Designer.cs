@@ -11,8 +11,8 @@ using Service;
 
 namespace Service.Migrations
 {
-    [DbContext(typeof(PessoaDbContext))]
-    [Migration("20230221232204_Initial")]
+    [DbContext(typeof(AmigoDbContext))]
+    [Migration("20230222133322_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace Service.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Domain.Entities.Pessoa", b =>
+            modelBuilder.Entity("Domain.Entities.Amigo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -46,7 +46,7 @@ namespace Service.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pessoa");
+                    b.ToTable("Amigo");
                 });
 #pragma warning restore 612, 618
         }

@@ -10,8 +10,8 @@ using Service;
 
 namespace Service.Migrations
 {
-    [DbContext(typeof(PessoaDbContext))]
-    partial class PessoaDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(AmigoDbContext))]
+    partial class AmigoDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -22,7 +22,7 @@ namespace Service.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Domain.Entities.Pessoa", b =>
+            modelBuilder.Entity("Domain.Entities.Amigo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -44,7 +44,7 @@ namespace Service.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pessoa");
+                    b.ToTable("Amigo");
                 });
 #pragma warning restore 612, 618
         }

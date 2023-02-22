@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    public class PessoaDbContext : DbContext
+    public class AmigoDbContext : DbContext
     {
-        public PessoaDbContext(DbContextOptions<PessoaDbContext> options) : base(options) { }
+        public AmigoDbContext(DbContextOptions<AmigoDbContext> options) : base(options) { }
 
-        public DbSet<Pessoa> Pessoa { get; set; }
+        public DbSet<Amigo> Amigo { get; set; }
 
     }
 }

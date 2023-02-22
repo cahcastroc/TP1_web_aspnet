@@ -1,0 +1,29 @@
+﻿@model List<Domain.ViewModel.PessoaViewModel>
+@{
+}
+<h2>Selecionados</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Sobrenome</td>
+            <td>Aniversário</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+
+        {
+            <tr>
+                <td>#</td>
+                <td>@item.Id</td>
+                <td>@item.Nome</td>
+                <td>@item.Sobrenome</td>
+                <td>@item.Aniversario</td>
+            </tr>
+        }
+    </tbody>
+</table>

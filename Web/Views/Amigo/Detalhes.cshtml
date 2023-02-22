@@ -1,8 +1,10 @@
 ﻿@model List<Domain.ViewModel.AmigoViewModel>
 @{
 }
-<h2>Selecionados</h2>
-
+<div class="text-center">
+<h2>Detalhes de amigos</h2>
+<hr/>
+</div>
 @using (Html.BeginForm("index", "amigo", FormMethod.Post)){
 <table class="table table-bordered">
     <thead class="text-center">
@@ -13,6 +15,7 @@
             <td>Nome</td>
             <td>Sobrenome</td>
             <td>Aniversário</td>
+            <td>Selecionado</td>
         </tr>
     </thead>
     <tbody class="text-center">

@@ -15,15 +15,12 @@ builder.Services.AddScoped<IAmigoService, AmigoService>();
 builder.Services.AddDbContext<AmigoDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("AmigosDB")
 ));
 
-//Backup sessions
-builder.Services.AddDistributedMemoryCache();
 
 //Setup Session
-builder.Services.AddSession();
+builder.Services.AddSession(options =>
+options.Cookie.Name = "Amigos_selecionados");
 
 
-//Cache
-builder.Services.AddMemoryCache();
 
 var app = builder.Build();
 

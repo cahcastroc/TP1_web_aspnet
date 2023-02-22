@@ -2,8 +2,13 @@
 @{
 }
 
-<h2>Lista de Amigos</h2>
-<h2>Selecione os amigos desejados:</h2>
+<div class="text-center">
+    <h2>Lista de Amigos</h2>
+    <hr />
+    <h4>Selecione os amigos desejados:</h4>
+</div>
+
+
 
 @using (Html.BeginForm("detalhes", "amigo", FormMethod.Post))
 {
@@ -15,6 +20,7 @@
                 <td>Nome</td>
                 <td>Sobrenome</td>
                 <td>E-mail</td>
+                <td>Selecionado</td>
 
             </tr>
         </thead>

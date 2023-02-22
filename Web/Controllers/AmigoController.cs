@@ -19,31 +19,16 @@ namespace Web.Controllers
         {
             var listaIdSelecionados = JsonConvert.SerializeObject(selecionado);
             HttpContext.Session.SetString("selecionado", listaIdSelecionados);
-        }
+        }     
 
-        private List<int> ListaSelecionados()
-        {
-            var selecionado = HttpContext.Session.GetString("selecionado");
+        public IActionResult Index(List<int> selecionado)        {
 
-            if (string.IsNullOrEmpty(selecionado))
-            {
-                return new List<int>();
-            }
-            return JsonConvert.DeserializeObject<List<int>>(HttpContext.Session.GetString("selecionado"));
-
-        }
-
-        public IActionResult Index()
-        {
-            var listaAmigos = _service.ListaTodas();
-            var selecionado = ListaSelecionados();
-
+            var listaAmigos = _service.ListaTodas();        
+          
             foreach (var amigo in listaAmigos)
             {
                 amigo.Selecionado = selecionado.Contains(amigo.Id);
             }
-
-
 
             return View(listaAmigos);
         }
@@ -55,13 +40,12 @@ namespace Web.Controllers
             {
                 SetSession(selecionado);
             }
-            var selecionados = ListaSelecionados();
+        
             var lista = _service.ListaTodas();
 
             foreach (var amigo in lista)
             {
-                amigo.Selecionado = selecionados.Contains(amigo.Id);
-
+                amigo.Selecionado = selecionado.Contains(amigo.Id);
             }
             return View(lista);
         }

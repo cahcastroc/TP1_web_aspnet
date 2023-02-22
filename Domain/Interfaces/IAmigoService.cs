@@ -11,7 +11,7 @@ namespace Domain.Interfaces
     public interface IAmigoService
     {
         IList<AmigoViewModel> ListaTodas();
-        IList<AmigoViewModel> ListaSelecionados(List<int> selecionado);
+      
 
     }
 }
